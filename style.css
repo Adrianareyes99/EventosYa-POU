@@ -1,0 +1,187 @@
+body{
+    background-color: #f5f7fa; 
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+    header{
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    nav{
+        display: flex;
+        gap: 20px;
+    }
+    header h1{
+        color: #2563eb;
+        font-size: 24px;
+        margin: 0;
+    }
+    nav a{
+        text-decoration: none;
+        color: #334155;
+        font-size: 14px;
+    }
+    nav a:hover{
+        color: #2563eb;
+    }
+    main{
+        padding: 30px;
+    }
+    form{
+        display: flex;
+        gap: 10px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    form input{
+        flex: 1;
+        padding: 15px;
+        border: 3px solid #cbd5e1;
+        border-radius: 5px;
+    }
+    form button{
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+    }
+.categorias{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.categorias button{
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    padding: 10px 18px;
+    cursor: pointer;/*Para que cuando pasemos el mouse salga una manita*/
+}
+.categorias button:hover{
+    background-color: #2563eb;
+    color: white;
+}
+/*Esta es la parte de organizar las 8 tarjetas de eventos*/
+.lista-eventos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+/*Ahora el diseño de esas 8 tarjetas*/
+.lista-eventos article{
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+/*Como son del mismo tama;o mis imagenes las intentare hacer del mismo tama;o*/
+.lista-eventos img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.lista-eventos button{ /*Estilo a los botones que estan dentro del contenedor antes de eso se miraban sin color*/
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.lista-eventos h3{ /*Antes de hacer esto los titulos no tenian estilo*/
+color: #1e263b;
+font-size: 16px;
+margin-bottom: 10px;
+}
+.lista-eventos p{
+    color: #64748b;
+    font-size: 13px;
+    margin: 8px 0;
+}
+.usuario{ /*La parte de la informacion del usuario*/
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+.usuario button{
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+@media (max-width: 900px){/*empezamos con el responsive que se vea dependiendo con cual tecnologia se abra*/
+    /*Para tablets*/
+.lista-eventos{
+    grid-template-columns: repeat(2, 1fr);/*cuando tenga 900px que tenga 2 columnas*/
+}
+}
+@media(max-width: 600px){/*Dise;o para celulares*/
+    .lista-eventos{
+        grid-template-columns: 1fr;/*Cuando tenga 600px tenga 1 columna*/
+    }
+        header{
+            flex-direction: column;
+            gap: 15px;
+        }
+        .usuario{
+            margin-left: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        form {
+            flex-direction: column;
+        }
+        form input{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .categorias{
+            flex-wrap: wrap;
+        }
+        main{
+            padding: 15px;
+        }
+    /*Probe como se veria en telefono abriendolo en el navegador y presionando ctrl,shift y M*/
+}
+.lista-eventos article button{
+    align-self: flex-end;
+    margin-top: auto;/*Ordena el boton que se vea segun mi figma*/
+}
+.lista-eventos .tipo-evento{
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.lista-eventos .precio-evento{
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: bold;
+}
+footer{
+    background-color: white;
+    color: #64748b;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+.categorias .activo{
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
